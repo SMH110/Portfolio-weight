@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { Subscription, Subject } from "rxjs";
 import { debounceTime } from "rxjs/operators";
+import { unSubscribe } from "../../util/common-functions";
 
 export interface ISearchInputProps {
   type: string;
@@ -32,7 +33,7 @@ export default class SearchInput extends React.Component<ISearchInputProps> {
   }
 
   public componentWillUnmount() {
-    this.inputChangeSub.unsubscribe();
+    unSubscribe(this.inputChangeSub);
   }
 
   private onChange = (event: ChangeEvent<HTMLInputElement>) => {
