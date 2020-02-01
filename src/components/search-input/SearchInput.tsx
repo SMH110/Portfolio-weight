@@ -9,11 +9,12 @@ export interface ISearchInputProps {
   placeholder?: string;
   debounceTime?: number;
   onChange: (text: string) => void;
+  clear$: Subject<void>;
 }
 export default class SearchInput extends React.Component<ISearchInputProps> {
   private inputChangeSub: Subscription;
   private onChange$ = new Subject();
-
+  private clearSub: Subscription;
   public state = {
     searchText: ""
   };
@@ -23,6 +24,11 @@ export default class SearchInput extends React.Component<ISearchInputProps> {
   }
 
   public componentDidMount() {
+    this.clearSub = this.props.clear$.subscribe(() => {
+      this.setState({
+        searchText: ""
+      });
+    });
     this.setState({
       searchText: this.props.value
     });
@@ -34,6 +40,7 @@ export default class SearchInput extends React.Component<ISearchInputProps> {
 
   public componentWillUnmount() {
     unSubscribe(this.inputChangeSub);
+    unSubscribe(this.clearSub);
   }
 
   private onChange = (event: ChangeEvent<HTMLInputElement>) => {
