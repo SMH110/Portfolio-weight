@@ -1,12 +1,24 @@
 import React from 'react';
 import './App.css';
+import Portfolio from './containers/portfolio/Portfolio';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+
+
+
+export interface IAppProps {
 }
 
-export default App;
+export default class App extends React.Component<IAppProps> {
+
+
+  public render() {
+    return (
+      <div className="App">
+      <Portfolio/>
+     </div>
+    );
+  }
+}
+
+
+
