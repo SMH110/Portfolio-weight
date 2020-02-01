@@ -3,7 +3,6 @@ export enum PortfolioActions {
   removeStock = "PORTFOLIO:REMOVE_STOCK"
 }
 
-
 export default function portfolio(state = [], action: IPortfolioAction) {
   switch (action.type) {
     case PortfolioActions.addStock:
@@ -21,8 +20,3 @@ export interface IPortfolioAction {
   item?: IPortfolioItem;
 }
 
-export interface IPortfolioItem {
-  name: string;
-  id: string;
-  weight: number;
-}
