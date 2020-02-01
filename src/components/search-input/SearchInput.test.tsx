@@ -33,7 +33,6 @@ describe("Search Input Component", () => {
     setTimeout(() => {
       let calls = onChangeSpy.mock.calls.length;
       let args = onChangeSpy.mock.calls[0];
-
       expect(calls).toEqual(1);
       expect(args[0]).toEqual("Test value");
 
