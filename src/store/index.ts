@@ -1,9 +1,11 @@
 import {createStore, combineReducers} from 'redux';
 import reducers from '../reducers';
 
-const rootReducer = combineReducers(reducers)
+const rootReducer = combineReducers(reducers);
 
-const store = createStore(rootReducer);
+
+const w : any = window;
+const store = createStore(rootReducer,w['__REDUX_DEVTOOLS_EXTENSION__'] && w['__REDUX_DEVTOOLS_EXTENSION__']());
 
 
 
