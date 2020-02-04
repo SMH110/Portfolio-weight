@@ -1,6 +1,5 @@
-.App {
-  text-align: center;
-}
+@import "./colours.scss";
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +34,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+
+
+
+// Portfolio
+
+.portfolio{
+  padding: 10px 30px;
+  box-sizing: border-box;
+  .search-input {
+    width:600px;
+    box-sizing: content-box;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $blue-2;
+  }
+
+  .search-results{
+    max-height :300px;
+    width: 600px;
+    margin-top: 10px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid $blue-2;
+
+    .result:hover {
+      background-color: $blue-1;
+    }
+  }
+  
 }
