@@ -24,7 +24,7 @@ export class DataService2 implements DataServiceAbstract {
 
 
   getStocks(option?){
-    return this.http.get("https://api.github.com/repositories/19438/commits", option)
+    return this.http.get("/data/stocks.json", option)
   }
 }
 

@@ -11,8 +11,9 @@ export default class PortfolioItem extends React.Component<IPortfolioItemProps> 
     this.props.onRemove(this.props.item);
   };
 
-  public onWeightingChange = event => {
-    this.props.onRemove(this.props.item);
+  public onWeightingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    
+    this.props.onWeightChange(this.props.item, event.target.value);
   };
   public render() {
     return (
@@ -25,7 +26,7 @@ export default class PortfolioItem extends React.Component<IPortfolioItemProps> 
         </div>
 
         <div className="column">
-          <button className="remove" onClick={this.onRemove}>Remove</button>
+          <button className="remove" type="button" onClick={this.onRemove}>Remove</button>
         </div>
       </div>
     );

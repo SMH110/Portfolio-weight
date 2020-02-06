@@ -1,0 +1,18 @@
+@import "../../colours.scss";
+
+.btn {
+    border:0;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+
+.btn:hover {
+    background-color: $blue-1;
+    color: #fff
+}
+
+.btn:active {
+    background-color: $blue-2;
+    color: #fff
+}
