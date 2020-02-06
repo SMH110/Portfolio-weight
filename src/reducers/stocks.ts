@@ -1,18 +1,12 @@
-enum StocksActions {
+export enum StocksActions {
   set = "STOCKS:SET",
   get = "STOCKS:GET"
 }
 
-const initialState  : IStock[]= [
-  {
-    name: "Tesco",
-    id: 1
-  },
-  {
-    name: "Next",
-    id: 2
-  }
-];
+const initialState  : IStock[]= [{
+  id: 1,
+  name : 'Tesco'
+}];
 export default function stocks(state = initialState, action: IStockAction) {
   switch (action.type) {
     case StocksActions.set:
@@ -29,7 +23,3 @@ export default function stocks(state = initialState, action: IStockAction) {
 
 type stockActionType = StocksActions.set | StocksActions.get;
 
-interface IStockAction {
-  type: stockActionType;
-  payload: any[];
-}

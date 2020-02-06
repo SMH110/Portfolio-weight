@@ -3,20 +3,14 @@ export enum PortfolioActions {
   removeStock = "PORTFOLIO:REMOVE_STOCK"
 }
 
-export default function portfolio(state = [], action: IPortfolioAction) {
+export default function portfolio(state = [], action: IAddStockToPortfolioAction) {
   switch (action.type) {
     case PortfolioActions.addStock:
-      break;
+      return [...state, action.payload]
 
     default:
       return state;
   }
 }
 
-type portfolioActionType = PortfolioActions.addStock | PortfolioActions.removeStock;
-
-export interface IPortfolioAction {
-  type: portfolioActionType;
-  item?: IPortfolioItem;
-}
 
