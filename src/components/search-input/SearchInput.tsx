@@ -33,7 +33,7 @@ export default class SearchInput extends React.Component<ISearchInputProps> {
       searchText: this.props.value
     });
 
-    this.inputChangeSub = this.onChange$.pipe(debounceTime(this.props.debounceTime || 250)).subscribe(() => {
+    this.inputChangeSub = this.onChange$.pipe(debounceTime(this.props.debounceTime || 100)).subscribe(() => {
       this.props.onChange(this.state.searchText);
     });
   }
@@ -51,6 +51,8 @@ export default class SearchInput extends React.Component<ISearchInputProps> {
   public render() {
     const { type, placeholder } = this.props;
     const value = this.state.searchText;
-    return <input type={type} value={value} onChange={this.onChange} placeholder={placeholder} />;
+    return (
+      <input className="search-input" type={type} value={value} onChange={this.onChange} placeholder={placeholder} />
+    );
   }
 }

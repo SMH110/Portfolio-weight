@@ -20,5 +20,5 @@ export function SearchResults(props: ISearchResultsProps) {
       <span>{item[props.displayKey]}</span>
     </div>
   ));
-  return <div>{(items.length && items) || ""}</div>;
+  return items.length ? <div className="search-results">{items}</div> : <div></div>;
 }
