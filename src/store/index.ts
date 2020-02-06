@@ -1,12 +1,14 @@
-import {createStore, combineReducers} from 'redux';
-import reducers from '../reducers';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import reducers from "../reducers";
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers(reducers);
 
-
-const w : any = window;
-const store = createStore(rootReducer,w['__REDUX_DEVTOOLS_EXTENSION__'] && w['__REDUX_DEVTOOLS_EXTENSION__']());
-
-
+const w: any = window;
+const store = createStore(
+  rootReducer,
+  
+  applyMiddleware(thunk)
+);
 
 export default store;
