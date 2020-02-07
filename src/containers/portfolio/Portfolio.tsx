@@ -120,14 +120,14 @@ export class Portfolio extends React.Component<IPortfolioProps> {
           ""
         )}
 
-        <div>
+        <div className="total-weight">
         <span>{portfolioItems.length ? 'Total Weights: ' : ""}</span>
           <span className="portfolio-total" style={{ color: this.state.total != 100 ? "red" : "black" }}>
             {portfolioItems.length ? this.state.total : ""}
           </span>
         </div>
-
-        {(portfolioItems.length && portfolioItems) || ""}
+          <div className="stocks">{(portfolioItems.length && portfolioItems) || ""}</div>
+        
       </div>
     );
   }

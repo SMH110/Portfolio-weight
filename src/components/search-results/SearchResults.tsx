@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import './SearchResult.scss';
 export interface ISearchResultsProps<T = any> {
   results: T[];
   displayKey: string;

@@ -1,0 +1,26 @@
+@import "../../colours.scss";
+.search-results {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 15px;
+//   border: 1px solid $blue-0;
+  padding: 0 10px 10px 10px;
+  border-top: none;
+  box-sizing: border-box;
+  background-color: rgb(249, 253, 253);
+  box-shadow: 10px 5px 11px -8px rgba(0,0,0,0.20);
+
+  .result{
+      font-size: 18px;
+      line-height:20px;
+      cursor: pointer;
+      padding: 3px;
+     
+
+      &:hover {
+          background-color: $blue-0;
+      }
+  }
+}

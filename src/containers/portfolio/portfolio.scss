@@ -1,3 +1,25 @@
-.portfolio{
-    position: relative;
+@import "../../colours.scss";
+.portfolio {
+  .total-weight {
+    float: right;
+  }
+
+  .portfolio-weighting-btns {
+    float: left;
+    .btn {
+        padding: 5px 10px;
+        margin-right: 10px;
+        outline: none;
+        background-color: $green-blue-1;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $green-blue-3;
+        }
+    }
+  }
+
+  .stocks{
+      clear: both;
+  }
 }

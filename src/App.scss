@@ -5,10 +5,7 @@
   padding: 0;
   border-width:0;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -16,20 +13,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -45,32 +29,12 @@
 
 
 
+.App{
 
-// Portfolio
-
-.portfolio{
-  padding: 10px 30px;
-  box-sizing: border-box;
-  .search-input {
-    width:600px;
-    box-sizing: content-box;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid $blue-2;
-  }
-
-  .search-results{
-    max-height :300px;
-    width: 600px;
-    margin-top: 10px;
-    overflow-y: auto;
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid $blue-2;
-
-    .result:hover {
-      background-color: $blue-1;
-    }
-  }
-  
+  min-width: 70%;
+  max-width: 70%;
+  margin: 30px auto;
+  border: 1px solid $blue-1;
+  padding: 10px;
+  background-color: #fff;
 }

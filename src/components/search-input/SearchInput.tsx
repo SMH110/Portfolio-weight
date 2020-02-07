@@ -2,7 +2,7 @@ import React, { ChangeEvent } from "react";
 import { Subscription, Subject } from "rxjs";
 import { debounceTime } from "rxjs/operators";
 import { unSubscribe } from "../../util/common-functions";
-
+import './SearchInput.scss';
 export interface ISearchInputProps {
   type: string;
   value: string;
