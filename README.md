@@ -1,5 +1,5 @@
 # Portfolio weight
-Simple App for margining weighted portfolio.
+Simple App for managing weighted portfolio.
 
 ## Available Scripts
 
