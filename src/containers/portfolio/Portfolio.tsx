@@ -24,16 +24,18 @@ export class Portfolio extends React.Component<IPortfolioProps> {
   };
 
   private clearSearchResultEvent = new Subject<void>();
-  private cancelRequestToken = axios.CancelToken.source();
+  private CancelToken = axios.CancelToken;
+  private source = this.CancelToken.source();
   constructor(public props: IPortfolioProps) {
     super(props);
   }
   public componentDidMount() {
-    this.props.dispatch(getStocks({ CancelToken: this.cancelRequestToken }));
+    this.props.dispatch(getStocks({ cancelToken: this.source.token }));
+
   }
 
   public componentWillUnmount() {
-    this.cancelRequestToken.cancel("ddd");
+    this.source.cancel();
   }
   private search = (text: string) => {
     this.setState({
@@ -123,7 +125,7 @@ export class Portfolio extends React.Component<IPortfolioProps> {
         <div className="total-weight">
         <span>{portfolioItems.length ? 'Total Weights: ' : ""}</span>
           <span className="portfolio-total" style={{ color: this.state.total != 100 ? "red" : "black" }}>
-            {portfolioItems.length ? this.state.total : ""}
+            {portfolioItems.length ? "%" + this.state.total : ""}
           </span>
         </div>
           <div className="stocks">{(portfolioItems.length && portfolioItems) || ""}</div>

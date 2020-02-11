@@ -14,6 +14,6 @@ export function getStocks(option) {
   return (dispatch: Dispatch) => {
     return DataService.getStocks(option).then(data => {
       dispatch(setStocks(data.data));
-    });
+    }).catch(error => console.error(error))
   };
 }

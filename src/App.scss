@@ -3,17 +3,14 @@
 * {
   margin: 0;
   padding: 0;
-  border-width:0;
+  border-width: 0;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -24,17 +21,25 @@
   }
 }
 
-
-
-
-
-
-.App{
-
+.App {
   min-width: 70%;
   max-width: 70%;
   margin: 30px auto;
   border: 1px solid $blue-1;
   padding: 10px;
   background-color: #fff;
+}
+
+// TODO move to button.scss
+
+.btn {
+  width: 100%;
+  padding: 5px 0;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.remove {
+  background-color: $danger-red;
+  color: #fff;
 }

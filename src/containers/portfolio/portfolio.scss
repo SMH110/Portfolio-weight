@@ -2,24 +2,32 @@
 .portfolio {
   .total-weight {
     float: right;
+    margin-right: 5px;
   }
 
   .portfolio-weighting-btns {
     float: left;
-    .btn {
-        padding: 5px 10px;
-        margin-right: 10px;
-        outline: none;
-        background-color: $green-blue-1;
-        font-weight: bold;
-
-        &:hover {
-            background-color: $green-blue-3;
-        }
+    width: 100%;
+    margin: 10px 0;
+    button {
+     margin: 0 5px;
+      width: 48%;
+      outline: none;
+      background-color: $blue-0;
+      font-weight: bold;
+      float: right;
+      &:hover {
+        background-color: $green-blue-3;
+      }
+      &:first-of-type {
+        float: left;
+      }
     }
   }
 
-  .stocks{
-      clear: both;
+  .stocks:first-of-type {
+    clear: both;
+    flex-wrap: wrap;
+    display: flex;
   }
 }

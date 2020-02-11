@@ -1,5 +1,5 @@
 import * as React from "react";
-import  './portfolio-item.scss'
+import "./portfolio-item.scss";
 export interface IPortfolioItemProps {
   item: IPortfolioItem;
   onRemove: (item) => void;
@@ -12,7 +12,6 @@ export default class PortfolioItem extends React.Component<IPortfolioItemProps> 
   };
 
   public onWeightingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    
     this.props.onWeightChange(this.props.item, event.target.value);
   };
   public render() {
@@ -22,11 +21,13 @@ export default class PortfolioItem extends React.Component<IPortfolioItemProps> 
           <span className="name">{this.props.item.name}</span>
         </div>
         <div className="column">
-          <input className="weight" value={this.props.item.weight} onChange={this.onWeightingChange}/>
+          <input className="weight" value={this.props.item.weight} onChange={this.onWeightingChange} />
         </div>
 
-        <div className="column">
-          <button className="remove" type="button" onClick={this.onRemove}>Remove</button>
+        <div className="column ">
+          <button className="btn remove" type="button" onClick={this.onRemove}>
+            Remove
+          </button>
         </div>
       </div>
     );
