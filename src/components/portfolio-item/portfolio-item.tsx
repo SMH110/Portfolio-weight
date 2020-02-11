@@ -15,13 +15,14 @@ export default class PortfolioItem extends React.Component<IPortfolioItemProps> 
     this.props.onWeightChange(this.props.item, event.target.value);
   };
   public render() {
+    let {item} = this.props;
     return (
-      <div className="portfolio-item">
+      <div className={!item.isValid ? 'portfolio-item invalid' : 'portfolio-item'}>
         <div className="column">
-          <span className="name">{this.props.item.name}</span>
+          <span className="name">{item.name}</span>
         </div>
         <div className="column">
-          <input className="weight" value={this.props.item.weight} onChange={this.onWeightingChange} />
+          <input className="weight" type="number" value={item.weight} onChange={this.onWeightingChange} />
         </div>
 
         <div className="column ">

@@ -5,7 +5,8 @@ export function addStock(item: IStock): IAddStockToPortfolioAction {
     type: PortfolioActions.addStock,
     payload: {
       ...item,
-      weight: 0
+      weight: 0,
+      isValid: false,
     }
   };
 }

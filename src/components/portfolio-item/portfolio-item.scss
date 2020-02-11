@@ -1,22 +1,40 @@
 @import "../../colours.scss";
-.portfolio-item{
+.portfolio-item {
+  width: 100%;
+  flex-direction: row;
+  margin-top: 5px;
+  display: flex;
+  .column {
     width: 100%;
     flex-direction: row;
-    margin-top: 5px;
-    display: flex;
-    .column {
-        width: 100%;
-        flex-direction: row;
-        box-sizing: border-box;
-        padding: 10px;
-        border: 1px solid $blue-1;
-        margin: 5px;
-        height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid $blue-1;
+    margin: 5px;
+    height: 50px;
 
-        .weight{
-            height: 100%;
-            box-sizing: border-box;
-            width: 100%;
-        }
+    .weight {
+      height: 100%;
+      box-sizing: border-box;
+      width: 100%;
     }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.portfolio-item.invalid {
+  .column {
+    border: 1px solid $danger-red;
+  }
 }

@@ -2,6 +2,7 @@ interface IPortfolioItem {
   name: string;
   id: number;
   weight: number;
+  isValid: boolean;
 }
 
 interface IPortfolioAction<T = any> extends IAction<portfolioActionType> {
